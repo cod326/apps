@@ -1,131 +1,319 @@
-*{
-    margin:0px;
-    padding: 0px;
-    outline: none;
-    user-select: none;
-    font-family: monospace;
+/* General Styles */
+html{
+    scroll-behavior: smooth;
 }
 
-body{
-    background-color: rgb(243, 243, 243);
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header{
-    height: 75px;
+/* Header */
+.header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header .logo {
+    display: inline-block;
+    font-size: 24px;
+    margin-left: 10px;
+}
+.nav {
+    float: right;
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom right, #4caf50, #8bc34a);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.hero .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+}
+.hero .btn:hover {
+    background: #555;
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 50px 20px;
+    background: #f4f4f4;
+}
+.upload-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.upload-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.upload-section form input,
+.upload-section form textarea,
+.upload-section form button{
+    width: 93%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.upload-section form div{
+    display: flex;
     width: 100%;
-    padding-top: 10px;
-    display: flex;
+    height: auto;
     align-items: center;
-    background-color: #333;
-    color:white;
-    font-size: 30px;
+    }
+
+.upload-section form select
+{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 5px;
 }
 
-header img{
-    filter: drop-shadow(2px 0px 0px rgb(158, 158, 158));
+.upload-section form button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.upload-section form button:hover {
+    background: #45a049;
 }
 
-.detail{
-    position: absolute;
-    right:20px
+/* Explore Section */
+.explore-section {
+    padding: 50px 0px;
+}
+.explore-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.notes-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.note-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-details{
-    position: relative;
+.border-bottom-primary{
+    border-bottom: 5px solid #4e73df;
+}
+.border-left-primary{
+    border-left: 5px solid #4e73df;
+}
+.border-bottom-secondary{
+    border-bottom: 5px solid #858796;
+}
+.border-bottom-success{
+    border-bottom: 5px solid #1cc88a;
+}
+.border-bottom-info{
+    border-bottom: 5px solid #36b9cc;
+}
+.border-bottom-warning{
+    border-bottom: 5px solid #f6c23e;
 }
 
-ul{
-    position: absolute;
-    right: 100%;
-    list-style: none;
-    width: max-content;
+.note-card h3 {
+    margin-bottom: 10px;
+}
+
+.note-card button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.note-card button:hover {
+    background: #45a049;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+/* Note Actions */
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.note-actions .btn {
     padding: 5px 10px;
-    background-color: white;
-    border-radius: 10px;
-}
-
-summary{
-    list-style: none;
-}
-
-#option{
-    background-clip: text;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    padding: 4px 10px;
-    border: 1px solid rgba(233,233,233,0.95);
-}
-
-#option:hover{
-    border: 4px solid rgba(233,233,233,0.95);
-}
-
-#option img{
-    width: 50px;
-}
-
-li{
-    padding: 5px 20px;
+    font-size: 14px;
+    background: #4caf50;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
-li a{
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
+.note-actions .btn:hover {
+    background: #45a049;
 }
 
-li:hover{
-    background-color: #dbdbdb;
-}
-
-footer {
-    margin-top: 20px;
+/* Rating Section */
+.rating {
+    margin: 10px 0;
+    text-align: left;
     font-size: 14px;
-    color: #aaa;
+}
+
+.rating input {
+    margin-left: 5px;
 }
 
 
-.heading {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0px;
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
+
+
+/* This is a stare card coding */
+
+/* Stats Section */
+.note-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-iframe{
+
+
+
+/* This is The form design code */
+
+/* Container */
+.upload-section .container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    max-width: 500px;
     width: 90%;
-    max-width: 600px;
-    height: 350px;
-    margin-left: 20px;
-    border: 2px solid white;
-    box-shadow: 1px 2px 20px white;
+    text-align: center;
+}
+
+/* Form Title */
+.upload-section .container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Form Elements */
+.upload-section #uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields */
+#uploadForm input[type="text"],
+#uploadForm select,
+#uploadForm input[type="file"] {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    width: 93%;
+    transition: border-color 0.3s ease;
 }
 
 
+/* Input Hover and Focus */
+#uploadForm input[type="text"]:focus,
+#uploadForm select:focus,
+#uploadForm input[type="file"]:focus {
+    border-color: #4caf50;
+}
 
-    @media (max-width:769px) {
-        body{
-            text-align: center;
-        }
-        .heading{
-            font-size: 20px;
-        }
+/* Select Elements */
+.subject {
+    appearance: none; /* Remove default styles for select */
+    background: #f9f9f9;
+    cursor: pointer;
+}
 
-        #option img{
-            width: 30px;
-        }
-        iframe{
-            height: 300px;
-        }
-    }
+/* File Input */
+#fileInput {
+    font-size: 14px;
+}
 
-@media (max-width:425px) {
-    
-    iframe{
-        height: 180px;
+/* Button Styles */
+#uploadForm .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover */
+#uploadForm .btn:hover {
+    background-color: #45a049;
+}
+
+/* Form Div */
+#uploadForm > div {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #uploadForm > div {
+        flex-direction: column;
     }
 }
